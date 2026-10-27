@@ -43,7 +43,7 @@ python chikari_to_epub.py
 ```
 Will download Beyond the Timescape by Er Gen.
 
-By default, the script attempts up to 2,000 chapters in one run,
+By default, the script attempts up to 4,000 chapters in one run,
 stopping earlier if it cannot find a next chapter. This can be changed with the --max-chapters command line option.
 It saves chapter HTML files in `[title]/` where [title] is the value passed to --title (make sure this does not conflict with any preexisting folders), records downloaded chapters in
 `[title]/manifest.json`, stores the resume point in
