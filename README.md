@@ -45,9 +45,9 @@ Will download Beyond the Timescape by Er Gen.
 
 By default, the script attempts up to 2,000 chapters in one run,
 stopping earlier if it cannot find a next chapter. This can be changed with the --max-chapters command line option.
-It saves chapter HTML files in `chapters/`, records downloaded chapters in
-`chapters/manifest.json`, stores the resume point in
-`chapters/progress.json`, and creates `beyond_the_timescape.epub` from
+It saves chapter HTML files in `[title]/` where [title] is the value passed to --title (make sure this does not conflict with any preexisting folders), records downloaded chapters in
+`[title]/manifest.json`, stores the resume point in
+`[title]/progress.json`, and creates the EPUB from
 the chapters saved so far. 
 There is a delay between chapter downloads of 1.2 seconds to prevent rate limiting errors, which can be changed with the --delay option.
 
@@ -61,13 +61,16 @@ Note that no cover picture will be downloaded. One can be added easily through E
 ## Resume after an interruption
 
 ``` bash
-python chikari_to_epub.py --resume
+python chikari_to_epub.py --resume\
+  --url "https://chikari.moe/novels/beyond-the-timescape/1" \
+  --title "Beyond the Timescape" \
+  --author "Er Gen" \
+  --output "Beyond the Timescape.epub"
 ```
 
 Resume uses the pending URL and chapter number stored in
 `chapters/progress.json`. Keep the entire `chapters` folder, including
-both JSON files. Use the same `--folder` value if you originally chose a
-custom folder.
+both JSON files. Use the same values for any command line options.
 
 If the script cannot find a valid `div.novel-text` body, it stops rather
 than risk saving comments as chapter text. After checking the page or
@@ -99,7 +102,7 @@ chapters from the website.
 your-folder/
 ├── chikari_to_epub.py
 ├── Beyond the Timescape.epub
-└── chapters/
+└── Beyond the Timescape/
     ├── chapter_00001.html
     ├── chapter_00002.html
     ├── manifest.json
