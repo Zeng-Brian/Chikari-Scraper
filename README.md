@@ -37,7 +37,7 @@ python chikari_to_epub.py \
   --author "Er Gen" \
   --output "Beyond the Timescape.epub"
 ```
-Where the values are changed accordingly. The values above are default. 
+Where the values are changed accordingly. Make sure the URL is of the first chapter and not the for the page itself. The values above are default. 
 ``` bash
 python chikari_to_epub.py
 ```
