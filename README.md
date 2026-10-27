@@ -58,7 +58,7 @@ python chikari_to_epub.py -h
 
 Note that no cover picture will be downloaded. One can be added easily through EPUB editing software such as Calibre.
 
-## 3. Resume after an interruption
+## Resume after an interruption
 
 ``` bash
 python chikari_to_epub.py --resume
@@ -73,7 +73,7 @@ If the script cannot find a valid `div.novel-text` body, it stops rather
 than risk saving comments as chapter text. After checking the page or
 fixing the cause, run the resume command again.
 
-## 4. Start at a specific chapter
+## Start at a specific chapter
 
 For example, start at chapter 150:
 
@@ -84,7 +84,7 @@ python chikari_to_epub.py --start 150
 This constructs a numbered chapter URL based on the default series URL.
 It is a manual starting point, not the same as `--resume`.
 
-## 5. Rebuild the EPUB without downloading
+## Rebuild the EPUB without downloading
 
 ``` bash
 python chikari_to_epub.py --build-epub-only
